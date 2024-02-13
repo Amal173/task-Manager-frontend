@@ -1,23 +1,17 @@
-import logo from './logo.svg';
+import { Routes, Route } from "react-router-dom"
 import './App.css';
+import CreateTask from "./Components/CreateTask/CreateTask";
+import CheckStatus from "./Components/CheckStatus/CheckStatus";
+import ListTasks from "./Components/ListTasks/ListTasks";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+            <Routes>
+        <Route path="/create" element={ <CreateTask/> } />
+        <Route path="/status" element={ <CheckStatus/> } />
+        <Route path="/" element={ <ListTasks/> } />
+      </Routes>
     </div>
   );
 }
